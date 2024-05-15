@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+import { Document } from "mongoose";
+
 // ====== USER PARAMS
 declare type CreateUserParams = {
   clerkId: string;
@@ -136,3 +138,48 @@ declare type TransformedImageProps = {
   hasDownload?: boolean;
   setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+declare interface IImage extends Document {
+  title: string;
+  transformationType: string;
+  publicId: string;
+  secureURL: string;
+  width?: number;
+  height?: number;
+  config?: object;
+  transformationUrl?: string;
+  aspectRatio?: string;
+  color?: string;
+  prompt?: string;
+  author: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+  };
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+declare interface ITransaction extends Document {
+  createdAt: Date;
+  stripeId: string;
+  amount: number;
+  plan?: string;
+  credits?: number;
+  buyer: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+  };
+}
+
+declare interface IUser extends Document {
+  clerkId: string;
+  email: string;
+  username: string;
+  photo: string;
+  firstName?: string;
+  lastName?: string;
+  planId: number;
+  creditBalance: number;
+}
