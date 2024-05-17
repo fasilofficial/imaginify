@@ -164,16 +164,16 @@ const TransformationForm = ({
     onChangeField: (value: string) => void
   ) => {
     debounce(() => {
-      setNewTransformation((prev: any) => ({
-        ...prev,
+      setNewTransformation((prevState: any) => ({
+        ...prevState,
         [type]: {
-          ...prev?.type,
+          ...prevState?.[type],
           [fieldName === "prompt" ? "prompt" : "to"]: value,
         },
       }));
+    }, 1000)();
 
-      return onChangeField(value);
-    }, 1000);
+    return onChangeField(value);
   };
 
   const onTransformHandler = async () => {
