@@ -43,31 +43,6 @@ export const navLinks = [
 
 export const plans = [
   {
-    _id: 1,
-    name: "Free",
-    icon: "/assets/icons/free-plan.svg",
-    price: 0,
-    credits: 20,
-    inclusions: [
-      {
-        label: "20 Free Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Basic Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: false,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: false,
-      },
-    ],
-  },
-  {
     _id: 2,
     name: "Pro Package",
     icon: "/assets/icons/free-plan.svg",
