@@ -24,6 +24,17 @@ export default function RootLayout({
   return (
     <ClerkProvider appearance={{ variables: { colorPrimary: "#624CF5" } }}>
       <html lang="en">
+        <head>
+          <!-- Google tag (gtag.js) -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-BE1GL6Q70E"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-BE1GL6Q70E');
+          </script>
+        </head>
         <body className={cn("font-ibmPlex antialiased", imbPlex.variable)}>
           {children}
           <SpeedInsights />
